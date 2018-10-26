@@ -1,0 +1,220 @@
+.App-header {
+  text-align: center;
+  height: 150px;
+  padding: 20px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.tile {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  background: lightyellow;
+  float: left;
+  font-size: 11px;
+  text-align: left;
+}
+
+.newIdeaButton {
+  background: darkblue;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding:10px;
+}
+
+.input {
+  border: 0;
+  background: none;
+  outline: none;
+  margin-top:10px;
+  width: 140px;
+  font-size: 11px;
+}
+
+.input:focus {
+  border: solid 1px lightgrey;
+}
+
+textarea {
+  resize: none;
+  height: 90px;
+  font-size: 11px;
+}
+
+.deleteButton {
+  visibility: hidden;
+  float: right;
+  margin: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  color: red;
+}
+
+.tile:hover .deleteButton {
+  visibility: visible;
+}
+
+.social-icons {
+  display: flex;
+}
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   Root Styles
+   ========================================================================== */
+
+:root {
+  --gray: #8A8E80;
+  --orange: #CE795C;
+}
+
+/* @font-face {
+  font-family: "Avenir";
+  src: local('./web-fonts-with-css/css/fonts/Avenir.ttc');
+} */
+
+h1, h2, h3, h4, h5, h6, header {
+  color: var(--orange);
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+body {
+  /* margin: auto; */
+  color: var(--gray);
+  line-height: 18px;
+}
+
+.wrapper {
+  /* background: #fff; */
+  /* -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+  box-shadow: 0 0 10px rgba(0,0,0,.3); */
+  max-width: 1440px;
+  margin: 16px auto;
+  padding: 2.25%; /* 18px / 800px */
+  width: 85%;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "hd"
+    "main"
+    "ft";
+}
+
+button {
+  background: var(--gray);
+  color: white;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Navigation Styles
+   ========================================================================== */
+
+header {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  grid-area: hd;
+}
+
+nav {
+  /* width: 100%; */
+  font-size: 2em;
+}
+
+nav ul {
+  /* margin: 0;
+  padding: 0; */
+  list-style: none;
+}
+
+nav li {
+  display: inline;
+  padding: 1em;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Footer Styles
+   ========================================================================== */
+
+footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  grid-area: ft;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer li {
+  align-content: space-between;
+}
+
+.social-icons {
+  display: flex;
+}
+
+/* ==========================================================================
+   Main Styles
+   ========================================================================== */
+
+main {
+  grid-area: main;
+}
+
+.hero-details {
+  margin: 0 10em;
+  width: auto;
+  text-align: center;
+}
+
+.App-title {
+  /* font-size: 3em; */
+}
+
+.App-intro {
+  /* font-size: large; */
+}
+
+/* Form */
+.formContainer h1,
+.alternativeAccess {
+  text-align: center;
+}
+
+.formFields,
+.submissionFields,
+.alternativeAccess {
+  padding-bottom: 1em;
+}
+
+.submissionFields {
+  text-align: right;
+}
+
+.all-profiles {
+  overflow: hidden;
+}
+

@@ -1,0 +1,29 @@
+.width-100 {
+  width: 100%;
+}
+
+.bg-overlay-gray-darkest {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+section.featured.inner {
+  background: #eee;
+  padding: 150px 0 50px;
+}
+
+section.featured {
+  height: auto;
+  padding: px 0 0px;
+  background: #333333;
+  vertical-align: middle;
+  text-align: center;
+  color:#fff;
+}
+
+section.featured img {
+  height: 100%;
+}
+
+.margin-top-3 {
+  margin-top: 3%;
+}
