@@ -64,7 +64,7 @@ class User extends Component {
   }
 
   followUser = () => {
-    axios.post(
+    axios.get(
       `http://localhost:3001/api/v1/users/${this.props.currentUser.id}/follow_user`,
       {
         params: {
@@ -73,7 +73,6 @@ class User extends Component {
       }
     )
     .then(response => {
-      // this.setState({userIsFollowing: response.data})
       const users = update(this.state.users, {
         $splice: [[0, 0, response.data]]
       })
@@ -83,7 +82,7 @@ class User extends Component {
   }
 
   unFollowUser = () => {
-    axios.delete(
+    axios.get(
       `http://localhost:3001/api/v1/users/${this.props.currentUser.id}/unfollow_user`,
       {
         params: {
@@ -92,7 +91,6 @@ class User extends Component {
       }
     )
     .then(response => {
-      // this.setState({userIsFollowing: response.data})
       const users = update(this.state.users, {
         $splice: [[0, 0, response.data]]
       })
@@ -109,14 +107,12 @@ class User extends Component {
     const avatar = null;
 
     const followButton = (
-      <Button bsStyle="primary" onClick={this.props.followUser}>Follow</Button>
+      <Button bsStyle="primary" onClick={this.followUser}>Follow</Button>
     )
 
     const unFollowButton = (
-      <Button bsStyle="danger" onClick={this.props.unFollowUser}>Unfollow</Button>
+      <Button bsStyle="danger" onClick={this.unFollowUser}>Unfollow</Button>
     )
-
-    if (this.state.view === "employees") return <div>orange</div>;
 
     return (
       <div>
