@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Header.css'
 import { logout } from '../actions/authActions';
@@ -17,29 +17,31 @@ class Header extends Component {
     )
 
     const mainHeader = (
-      <ul className="nav navbar-nav navbar-right">
-        <li><Link to="/about">About</Link></li>
-        <li> <Link className='link' to='/login'>Log In</Link> </li>
-        <li> <Link className='link' to='/signup'>Sign Up</Link> </li>
+      <ul className="header">
+        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to='/login'>Log In</NavLink> </li>
+        <li><NavLink to='/signup'>Sign Up</NavLink> </li>
       </ul>
     );
 
     const userHeader = (
-      <ul className="nav navbar-nav navbar-right">
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/user_profile">Profile</Link></li>
-        <li><Link to="/recipes_container">My Recipes</Link></li>
-        <li><Link to="/followers">Followers</Link></li>
-        <li><Link to="/following">Following</Link></li>
-        <li><Link to="/all_profiles">All Profiles</Link></li>
-        <li onClick={(e) => this.handleLogout(e)}>Log Out</li>
+
+
+      <ul className="header">
+        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/user_profile">Profile</NavLink></li>
+        <li><NavLink to="/recipes_container">My Recipes</NavLink></li>
+        <li><NavLink to="/followers">Followers</NavLink></li>
+        <li><NavLink to="/following">Following</NavLink></li>
+        <li><NavLink to="/all_profiles">All Profiles</NavLink></li>
+        <li className="log-out" onClick={(e) => this.handleLogout(e)}>Log Out</li>
       </ul>
     );
 
     return (
       <header>
         <nav>
-          <div className="header">
+          <div className="container">
             <section id="header" className="appear">
               <div className="navbar navbar-fixed-top">
                 <div className="navbar-collapse collapse">

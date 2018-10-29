@@ -29,15 +29,6 @@ class UserProfile extends Component {
             <h1>{this.props.currentUser.first_name}</h1>
           </Col>
         </Grid>
-
-        <div>
-          <ul className="header">
-            <li><NavLink to="/followers">Followers</NavLink></li>
-            <li><NavLink to="/following">Following</NavLink></li>
-            <li><NavLink to="/recipes_container">My Recipies</NavLink></li>
-            <li><NavLink to="/all_profiles">All Profiles</NavLink></li>
-          </ul>
-        </div>
       </div>
     );
   }
