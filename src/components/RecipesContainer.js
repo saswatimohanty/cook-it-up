@@ -71,26 +71,38 @@ class RecipesContainer extends Component {
   }
 
   render() {
+    const currentUser = this.props.currentUser;
+    const { id } = this.props.match.params
+    let newRecipeButton;
+
+    if (id === currentUser.id) {
+      newRecipeButton = <div>
+                          <button className="btn btn-primary" onClick={this.addNewRecipe}>
+                            New Recipe
+                          </button>
+                          <span className="notification">
+                            {this.state.notification}
+                          </span>
+                        </div>
+    }
+
     return (
       <div>
-        <div>
-          <button className="btn btn-primary" onClick={this.addNewRecipe} >
-            New Recipe
-          </button>
-          <span className="notification">
-            {this.state.notification}
-          </span>
-        </div>
-
+        {newRecipeButton}
         {this.state.recipes.map((recipe) => {
-          if(this.state.editingRecipeId === recipe.id) {
-            return(<RecipeForm recipe={recipe} key={recipe.id} updateRecipe={this.updateRecipe}
-                    titleRef= {input => this.title = input}
-                    resetNotification={this.resetNotification} />)
+          if (id === currentUser.id) {
+            if(this.state.editingRecipeId === recipe.id) {
+              return(<RecipeForm recipe={recipe} key={recipe.id} updateRecipe={this.updateRecipe}
+                      titleRef= {input => this.title = input}
+                      resetNotification={this.resetNotification} />)
+            }
+            else {
+              return (<Recipe recipe={recipe} key={recipe.id} onClick={this.enableEditing}
+                      onDelete={this.deleteRecipe} />)
+            }
           }
           else {
-            return (<Recipe recipe={recipe} key={recipe.id} onClick={this.enableEditing}
-                    onDelete={this.deleteRecipe} />)
+            return (<Recipe recipe={recipe} key={recipe.id} userId={id} currentUserId={currentUser.id} />)
           }
         })}
       </div>

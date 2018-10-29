@@ -52,10 +52,10 @@ class App extends Component {
         <Header isAuthenticated={isAuthenticated} currentUser={currentUser} />
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/user_profile" render={() => <UserProfile currentUser={currentUser}/>} />
-        <Route exact path="/followers" render={() => <Followers currentUser={currentUser}/>} />
-        <Route exact path="/following" render={() => <Following currentUser={currentUser}/>} />
-        <Route path='/recipes_container/:id' exact component={RecipesContainer} />
+        <Route exact path="/user_profile" render={() => <UserProfile currentUser={currentUser} />} />
+        <Route exact path="/followers" render={() => <Followers currentUser={currentUser} />} />
+        <Route exact path="/following" render={() => <Following currentUser={currentUser} />} />
+        <Route exact path="/recipes_container/:id" render={(props) => <RecipesContainer currentUser={currentUser} {...props} /> } />
         <Route exact path="/all_profiles" render={() => <AllProfiles currentUser={currentUser} />} />
         <Footer/>
       </div>

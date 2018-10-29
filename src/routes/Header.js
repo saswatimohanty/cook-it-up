@@ -25,12 +25,9 @@ class Header extends Component {
     );
 
     const userHeader = (
-
-
       <ul className="header">
         <li><NavLink to="/about">About</NavLink></li>
         <li><NavLink to="/user_profile">Profile</NavLink></li>
-        <li><NavLink to="/recipes_container">My Recipes</NavLink></li>
         <li><NavLink to="/followers">Followers</NavLink></li>
         <li><NavLink to="/following">Following</NavLink></li>
         <li><NavLink to="/all_profiles">All Profiles</NavLink></li>

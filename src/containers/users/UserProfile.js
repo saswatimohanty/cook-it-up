@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Image, Grid, Col, Button} from 'react-bootstrap';
-import { NavLink, Route } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import Following from './Following'
 import Followers from './Followers'
 import RecipesContainer from '../../components/RecipesContainer'
@@ -28,6 +28,9 @@ class UserProfile extends Component {
           <Col md={8}>
             <h1>{this.props.currentUser.first_name}</h1>
           </Col>
+        </Grid>
+        <Grid>
+          <Link className="btn btn-warning" to={`recipes_container/${this.props.currentUser.id}`}>View Recipies</Link>
         </Grid>
       </div>
     );
