@@ -9,7 +9,7 @@ class User extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      users: [],
+      user: null,
       followingProfilesCount: null,
       followerProfilesCount: null,
       recipesCount: null,
@@ -73,10 +73,10 @@ class User extends Component {
       }
     )
     .then(response => {
-      const users = update(this.state.users, {
-        $splice: [[0, 0, response.data]]
-      })
-      this.setState({users: users})
+      this.setState({user: response.data})
+      this.getFollowingProfilesCount();
+      this.getFollowersProfilesCount();
+      this.followingOrNot();
     })
     .catch(error => console.log(error))
   }
@@ -91,10 +91,10 @@ class User extends Component {
       }
     )
     .then(response => {
-      const users = update(this.state.users, {
-        $splice: [[0, 0, response.data]]
-      })
-      this.setState({users: users})
+      this.setState({user: response.data})
+      this.getFollowingProfilesCount();
+      this.getFollowersProfilesCount();
+      this.followingOrNot();
     })
     .catch(error => console.log(error))
   }
