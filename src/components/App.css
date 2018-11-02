@@ -102,7 +102,7 @@ body {
   -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
   box-shadow: 0 0 10px rgba(0,0,0,.3); */
   max-width: 1440px;
-  margin: 16px auto;
+  /*margin: 16px auto;*/
   padding: 2.25%; /* 18px / 800px */
   width: 85%;
   display: grid;

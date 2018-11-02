@@ -3,7 +3,6 @@ import axios from 'axios'
 import {Grid, Col, Button} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "./User.css";
-import update from 'immutability-helper'
 
 class User extends Component {
   constructor(props) {
@@ -119,21 +118,28 @@ class User extends Component {
         <article className="user">
           <header>
             <div className="Post-user">
-              <div className="user-avatar">
-                <img src={avatar} alt={firstName} />
-              </div>
-              <div className="row">
-                <div className="user-name">
-                  <span>{firstName} {lastName}</span>
+              <Col md={2}>
+                <div className="user-avatar">
+                  <img src={avatar} alt={firstName} />
                 </div>
-                <div>
-                  Email: {emailId}
+              </Col>
+              <Col md={3}>
+                <div className="row">
+                  <div className="user-name">
+                    <span>{firstName} {lastName}</span>
+                  </div>
+                  <div>
+                    Email: {emailId}
+                  </div>
                 </div>
-              </div>
-              <div className="show-buttons">
-                {this.state.userIsFollowing ? unFollowButton : followButton}
-                <Link className="btn btn-warning" to={`recipes_container/${userId}`}>View Recipies</Link>
-              </div>
+              </Col>
+              <Col md={5}>
+                <div className="show-buttons">
+                  {userId !== this.props.currentUser.id ? this.state.userIsFollowing ?
+                  unFollowButton : followButton : ''}
+                  <Link className="btn btn-warning" to={`recipes_container/${userId}`}>View Recipies</Link>
+                </div>
+              </Col>
             </div>
           </header>
           <Grid>

@@ -56,7 +56,7 @@ class RecipesContainer extends Component {
     this.setState({notification: ''})
   }
 
-  enableEditing =(id) => {
+  enableEditing = (id) => {
     this.setState({editingRecipeId: id}, () => { this.title.focus() })
   }
 
